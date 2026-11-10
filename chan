@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Profil Sekolah</title>
+    <!-- Menggunakan Tailwind CSS untuk styling yang cepat dan modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar / Menu -->
+    <nav class="bg-blue-600 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-wide">
+                🏫 Portal Sekolah
+            </div>
+            <div class="space-x-2 md:space-x-6">
+                <button onclick="switchTab('home')" id="btn-home" class="nav-btn px-3 py-2 rounded-lg font-medium bg-blue-700 transition">Home</button>
+                <button onclick="switchTab('murid')" id="btn-murid" class="nav-btn px-3 py-2 rounded-lg font-medium hover:bg-blue-700 transition">Murid</button>
+                <button onclick="switchTab('guru')" id="btn-guru" class="nav-btn px-3 py-2 rounded-lg font-medium hover:bg-blue-700 transition">Guru</button>
+                <button onclick="switchTab('ekskul')" id="btn-ekskul" class="nav-btn px-3 py-2 rounded-lg font-medium hover:bg-blue-700 transition">Ekskul</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="container mx-auto px-6 py-8">
+
+        <!-- 1. Halaman Home -->
+        <section id="content-home" class="tab-content space-y-6">
+            <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-8 md:p-12 rounded-2xl shadow-lg">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Selamat Datang di Portal Sekolah Kami</h1>
+                <p class="text-blue-100 text-lg mb-6">Membangun generasi cerdas, berkarakter, dan berprestasi unggul.</p>
+                <button onclick="switchTab('murid')" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl shadow hover:bg-blue-50 transition">Lihat Data Murid</button>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+                    <h3 class="font-bold text-xl mb-2 text-blue-600">📚 Kurikulum Merdeka</h3>
+                    <p class="text-gray-600">Pendidikan fleksibel yang berfokus pada pengembangan potensi dan karakter siswa.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+                    <h3 class="font-bold text-xl mb-2 text-blue-600">🏆 Prestasi Tinggi</h3>
+                    <p class="text-gray-600">Aktif dalam berbagai kompetisi akademik maupun non-akademik di tingkat regional dan nasional.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+                    <h3 class="font-bold text-xl mb-2 text-blue-600">🌱 Lingkungan Asri</h3>
+                    <p class="text-gray-600">Suasana belajar yang nyaman, bersih, dan mendukung proses belajar mengajar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Halaman Murid -->
+        <section id="content-murid" class="tab-content hidden space-y-6">
+            <h2 class="text-2xl font-bold text-gray-800">Daftar Perwakilan Siswa Berprestasi</h2>
+            <div class="bg-white rounded-xl shadow overflow-hidden border border-gray-100">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-100 text-gray-700">
+                        <tr>
+                            <th class="p-4">No</th>
+                            <th class="p-4">Nama Lengkap</th>
+                            <th class="p-4">Kelas</th>
+                            <th class="p-4">Prestasi Unggulan</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4">1</td>
+                            <td class="p-4 font-medium">Ahmad Fauzi</td>
+                            <td class="p-4">XII IPA 1</td>
+                            <td class="p-4">Juara 1 Olimpiade Matematika</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4">2</td>
+                            <td class="p-4 font-medium">Siti Rahma</td>
+                            <td class="p-4">XI IPS 2</td>
+                            <td class="p-4">Juara 2 Lomba Debat Bahasa</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-4">3</td>
+                            <td class="p-4 font-medium">Budi Santoso</td>
+                            <td class="p-4">XII IPA 3</td>
+                            <td class="p-4">Medali Emas Pencak Silat Nasional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. Halaman Guru -->
+        <section id="content-guru" class="tab-content hidden space-y-6">
+            <h2 class="text-2xl font-bold text-gray-800">Dewan Guru & Pengajar</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100 text-center">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">DR</div>
+                    <h3 class="font-bold text-lg">Drs. H. Mulyadi, M.Pd.</h3>
+                    <p class="text-sm text-gray-500 mb-2">Kepala Sekolah</p>
+                    <p class="text-xs text-gray-600">Pengalaman mengajar lebih dari 25 tahun di bidang manajemen pendidikan.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100 text-center">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">SN</div>
+                    <h3 class="font-bold text-lg">Siti Nurbaya, S.Pd.</h3>
+                    <p class="text-sm text-gray-500 mb-2">Guru Matematika</p>
+                    <p class="text-xs text-gray-600">Aktif membimbing siswa dalam persiapan olimpiade sains.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100 text-center">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">AH</div>
+                    <h3 class="font-bold text-lg">Ahmad Hidayat, M.Kom.</h3>
+                    <p class="text-sm text-gray-500 mb-2">Guru Informatika</p>
+                    <p class="text-xs text-gray-600">Spesialis pemrograman dasar dan pengembangan web siswa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Halaman Ekskul -->
+        <section id="content-ekskul" class="tab-content hidden space-y-6">
+            <h2 class="text-2xl font-bold text-gray-800">Kegiatan Ekstrakurikuler</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+                    <h3 class="font-bold text-lg text-blue-600 mb-2">🛡️ Paskibra</h3>
+                    <p class="text-sm text-gray-600">Melatih kedisiplinan, kepemimpinan, dan kecintaan terhadap tanah air.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+                    <h3 class="font-bold text-lg text-blue-600 mb-2">🏀 Bola Basket</h3>
+                    <p class="text-sm text-gray-600">Menyalurkan bakat olahraga bola besar serta kerja sama tim.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+                    <h3 class="font-bold text-lg text-blue-600 mb-2">💻 Coding Club</h3>
+                    <p class="text-sm text-gray-600">Mempelajari dasar-dasar pembuatan aplikasi dan logika pemrograman.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100">
+                    <h3 class="font-bold text-lg text-blue-600 mb-2">🎨 Seni Musik & Tari</h3>
+                    <p class="text-sm text-gray-600">Wadah kreativitas seni tradisional maupun modern bagi siswa.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-6 mt-12 text-center text-sm">
+        <p>&copy; 2026 Portal Sekolah. All rights reserved.</p>
+    </footer>
+
+    <!-- Script JavaScript untuk Mengatur Navigasi Tab -->
+    <script>
+        function switchTab(tabName) {
+            // Sembunyikan semua konten
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Reset warna tombol navigasi
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-700');
+            });
+
+            // Tampilkan konten yang dipilih
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+
+            // Beri warna aktif pada tombol yang diklik
+            document.getElementById('btn-' + tabName).classList.add('bg-blue-700');
+        }
+    </script>
+</body>
+</html>
